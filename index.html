@@ -20,7 +20,7 @@
             background-color: var(--bg-cream);
             font-family: 'Montserrat', sans-serif;
             color: #2d2d2d;
-            overflow: hidden; /* Disable body scroll to allow container snapping */
+            overflow: hidden; 
         }
 
         .scroll-container {
@@ -29,7 +29,6 @@
             overflow-y: auto;
             scroll-snap-type: y mandatory;
             scroll-behavior: smooth;
-            /* For smooth scrolling on iOS */
             -webkit-overflow-scrolling: touch;
         }
 
@@ -41,17 +40,18 @@
             justify-content: center;
             align-items: center;
             position: relative;
-            padding: 2rem 1rem;
+            /* Reduced padding on mobile to prevent clipping */
+            padding: 1.5rem 1rem;
             scroll-snap-align: start;
             scroll-snap-stop: always;
         }
 
-        /* Typography */
+        /* Typography - Fluid Sizes */
         .serif-en { font-family: 'Cormorant Garamond', serif; }
-        .serif-ar { font-family: 'Amiri', serif; line-height: 1.4; }
+        .serif-ar { font-family: 'Amiri', serif; line-height: 1.2; }
         
-        .display-ar { font-size: clamp(2rem, 8vw, 3.5rem); }
-        .display-en { font-size: clamp(2.5rem, 10vw, 5rem); }
+        .display-ar { font-size: clamp(1.8rem, 7vw, 3.5rem); }
+        .display-en { font-size: clamp(2.2rem, 9vw, 5rem); }
         
         /* Hero Section */
         .hero-section {
@@ -88,9 +88,9 @@
             background: linear-gradient(145deg, var(--gold), var(--gold-light)); 
             border: none;
             color: white !important;
-            padding: 14px 30px;
+            padding: 12px 25px;
             letter-spacing: 2px;
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 600;
             border-radius: 50px;
             text-decoration: none;
@@ -109,43 +109,41 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(176, 141, 68, 0.1);
             border-radius: 30px;
-            padding: 2.5rem 1.5rem;
+            padding: 2rem 1.2rem;
             box-shadow: 0 15px 35px rgba(0,0,0,0.03);
             width: 100%;
             max-width: 800px;
         }
         
         .divider { 
-            width: 50px; 
+            width: 40px; 
             height: 1px; 
             background: var(--gold); 
-            margin: 1.5rem auto; 
+            margin: 1rem auto; 
             opacity: 0.5; 
         }
 
         .text-shadow { text-shadow: 0 2px 15px rgba(0,0,0,0.4); }
 
-        /* Responsive Border Fix for Mobile */
         @media (min-width: 768px) {
             .border-start-md { border-left: 1px solid rgba(176, 141, 68, 0.2); }
             .border-end-md { border-right: 1px solid rgba(176, 141, 68, 0.2); }
-            section {
-                padding: 0;
-            }
+            section { padding: 0; }
+            .divider { width: 50px; margin: 1.5rem auto; }
         }
 
-        /* Specific fix for the issue in the screenshot */
+        /* Tighten spacing for mobile details */
         .venue-time-row {
-            margin-top: 1.5rem;
+            margin-top: 1rem;
         }
         
         .venue-time-row .col {
-            padding: 1.2rem;
+            padding: 0.8rem;
         }
 
         .arabic-num {
             font-family: 'Amiri', serif;
-            font-size: 2.2rem;
+            font-size: clamp(1.8rem, 6vw, 2.2rem);
         }
 
         /* Hide scrollbar */
@@ -168,11 +166,11 @@
             <div class="container hero-content">
                 <h2 class="serif-ar display-ar mb-2 text-shadow" dir="rtl">آية & باسل</h2>
                 <div class="divider bg-white" style="width: 80px;"></div>
-                <h1 class="serif-en display-en font-italic mb-4 text-shadow">Aya & Bassel</h1>
-                <p class="text-uppercase tracking-widest small text-shadow" style="letter-spacing: 6px; font-weight: 300;">30 . 06 . 2024</p>
+                <h1 class="serif-en display-en font-italic mb-3 text-shadow">Aya & Bassel</h1>
+                <p class="text-uppercase tracking-widest small text-shadow" style="letter-spacing: 6px; font-weight: 300; font-size: 0.75rem;">30 . 06 . 2024</p>
                 
-                <div class="mt-5 d-none d-md-block">
-                    <div class="mx-auto" style="width:1px; height:80px; background: rgba(255,255,255,0.6);"></div>
+                <div class="mt-4 d-none d-md-block">
+                    <div class="mx-auto" style="width:1px; height:60px; background: rgba(255,255,255,0.6);"></div>
                 </div>
             </div>
         </section>
@@ -182,27 +180,27 @@
             <div class="container text-center">
                 <div class="row justify-content-center">
                     <div class="col-lg-10">
-                        <span class="gold-accent fs-3 mb-2 d-block">✧</span>
-                        <h2 class="serif-ar display-5 mb-3" dir="rtl">نتشرف بدعوتكم لمشاركتنا حفل زفافنا</h2>
-                        <p class="serif-en fs-5 fst-italic text-muted px-3">With love and joy, we request the honor of your presence.</p>
+                        <span class="gold-accent fs-4 mb-1 d-block">✧</span>
+                        <h2 class="serif-ar h1 mb-2" dir="rtl">نتشرف بدعوتكم لمشاركتنا حفل زفافنا</h2>
+                        <p class="serif-en fs-6 fst-italic text-muted px-3 mb-0">With love and joy, we request the honor of your presence.</p>
                     </div>
                 </div>
 
                 <div class="row row-cols-1 row-cols-md-2 g-0 venue-time-row">
                     <!-- Venue -->
-                    <div class="col mb-4 mb-md-0">
-                        <h6 class="gold-accent text-uppercase fw-bold small mb-3" style="letter-spacing: 2px;">The Venue | المكان</h6>
-                        <p class="serif-ar h3 fw-bold mb-1">فندق جراند الخيال</p>
-                        <p class="serif-en h3 fst-italic mb-3">Grand Hôtel Al Khayal</p>
-                        <a href="#" class="small text-uppercase text-decoration-none border-bottom border-dark pb-1 text-dark fw-bold">View Location Map</a>
+                    <div class="col mb-3 mb-md-0">
+                        <h6 class="gold-accent text-uppercase fw-bold x-small mb-2" style="letter-spacing: 2px; font-size: 0.7rem;">The Venue | المكان</h6>
+                        <p class="serif-ar h4 fw-bold mb-0">فندق جراند الخيال</p>
+                        <p class="serif-en h4 fst-italic mb-2">Grand Hôtel Al Khayal</p>
+                        <a href="#" class="small text-uppercase text-decoration-none border-bottom border-dark pb-1 text-dark fw-bold" style="font-size: 0.65rem;">View Location Map</a>
                     </div>
                     
                     <!-- Time -->
                     <div class="col border-start-md">
-                        <h6 class="gold-accent text-uppercase fw-bold small mb-3" style="letter-spacing: 2px;">The Time | الوقت</h6>
-                        <p class="arabic-num fw-bold mb-1">٣٠ حزيران ٢٠٢٤</p>
-                        <p class="serif-en h3 fst-italic mb-3">June 30, 2024</p>
-                        <p class="text-muted small">8:30 PM | الثامنة والنصف مساءً</p>
+                        <h6 class="gold-accent text-uppercase fw-bold x-small mb-2" style="letter-spacing: 2px; font-size: 0.7rem;">The Time | الوقت</h6>
+                        <p class="arabic-num fw-bold mb-0">٣٠ حزيران ٢٠٢٤</p>
+                        <p class="serif-en h4 fst-italic mb-2">June 30, 2024</p>
+                        <p class="text-muted small" style="font-size: 0.75rem;">8:30 PM | الثامنة والنصف مساءً</p>
                     </div>
                 </div>
             </div>
@@ -212,16 +210,16 @@
         <section class="bg-light">
             <div class="container d-flex justify-content-center">
                 <div class="glass-card text-center">
-                    <div class="row g-4 g-md-0">
+                    <div class="row g-3 g-md-0">
                         <div class="col-md-6 border-end-md px-md-4">
-                            <h6 class="gold-accent text-uppercase fw-bold small mb-3" style="letter-spacing: 1px;">Dress Code</h6>
-                            <p class="serif-ar h4 fw-bold mb-1">ملابس رسمية</p>
-                            <p class="serif-en fs-5 fst-italic text-muted">Formal Attire</p>
+                            <h6 class="gold-accent text-uppercase fw-bold small mb-2" style="letter-spacing: 1px; font-size: 0.7rem;">Dress Code</h6>
+                            <p class="serif-ar h5 fw-bold mb-0">ملابس رسمية</p>
+                            <p class="serif-en fs-6 fst-italic text-muted">Formal Attire</p>
                         </div>
                         <div class="col-md-6 px-md-4">
-                            <h6 class="gold-accent text-uppercase fw-bold small mb-3" style="letter-spacing: 1px;">Guest Note</h6>
-                            <p class="serif-ar h4 fw-bold mb-1">نعتذر عن استقبال الأطفال</p>
-                            <p class="serif-en fs-5 fst-italic text-muted">Adults only please</p>
+                            <h6 class="gold-accent text-uppercase fw-bold small mb-2" style="letter-spacing: 1px; font-size: 0.7rem;">Guest Note</h6>
+                            <p class="serif-ar h5 fw-bold mb-0">نعتذر عن استقبال الأطفال</p>
+                            <p class="serif-en fs-6 fst-italic text-muted">Adults only please</p>
                         </div>
                     </div>
                 </div>
@@ -230,25 +228,25 @@
 
         <!-- Footer Section -->
         <section class="bg-white text-center">
-            <div class="container py-4">
-                <div class="divider mb-4"></div>
-                <h2 class="serif-ar display-4 mb-3" dir="rtl">بانتظاركم لنحتفل معاً</h2>
-                <p class="serif-en h3 fst-italic text-muted mb-5">We can't wait to see you.</p>
+            <div class="container py-3">
+                <div class="divider mb-3"></div>
+                <h2 class="serif-ar h2 mb-2" dir="rtl">بانتظاركم لنحتفل معاً</h2>
+                <p class="serif-en h4 fst-italic text-muted mb-4">We can't wait to see you.</p>
 
-                <div class="mb-5">
+                <div class="mb-4">
                     <a href="#" class="gold-btn">
                         ADD TO CALENDAR / حفظ الموعد
                     </a>
                 </div>
 
-                <div class="mt-4">
-                    <p class="text-muted small text-uppercase mb-1" style="letter-spacing: 2px;">For Inquiries | للإستفسار</p>
-                    <p class="fw-bold fs-4" style="letter-spacing: 3px;">76 169 032</p>
+                <div class="mt-3">
+                    <p class="text-muted small text-uppercase mb-0" style="letter-spacing: 2px; font-size: 0.7rem;">For Inquiries | للإستفسار</p>
+                    <p class="fw-bold fs-5" style="letter-spacing: 2px;">76 169 032</p>
                 </div>
             </div>
             
-            <footer class="mt-auto pb-4">
-                <p class="small text-muted opacity-50 text-uppercase fst-italic" style="letter-spacing: 4px; font-size: 9px;">Aya & Bassel — 2024</p>
+            <footer class="mt-auto pb-3">
+                <p class="small text-muted opacity-50 text-uppercase fst-italic" style="letter-spacing: 4px; font-size: 8px;">Aya & Bassel — 2024</p>
             </footer>
         </section>
 
