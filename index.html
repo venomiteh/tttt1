@@ -5,137 +5,149 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aya & Bassel | Wedding Invitation</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Amiri:ital,wght@0,400;0,700&family=Montserrat:wght@100;200;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Amiri:ital,wght@0,400;0,700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        /* 1. SCROLL SNAPPING SETUP */
         html, body {
             margin: 0;
             padding: 0;
             height: 100%;
-            overflow: hidden; /* Prevent double scrollbars */
+            overflow: hidden;
+            background-color: #fdfcfb;
         }
 
         .scroll-container {
             height: 100vh;
             overflow-y: scroll;
-            scroll-snap-type: y mandatory; /* Forces snapping */
+            scroll-snap-type: y mandatory;
             scroll-behavior: smooth;
         }
 
         section {
-            min-height: 100vh; /* Changed to min-height to accommodate all content on smaller screens */
+            min-height: 100vh;
             width: 100%;
-            scroll-snap-align: start; /* Where to snap */
-            scroll-snap-stop: always; /* Prevents skipping sections */
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: center;
             position: relative;
+            padding: 2rem 1rem;
         }
 
-        body { font-family: 'Montserrat', sans-serif; background-color: #fdfcfb; color: #3d3d3d; }
+        body { font-family: 'Montserrat', sans-serif; color: #2d2d2d; }
         .serif-en { font-family: 'Cormorant Garamond', serif; }
         .serif-ar { font-family: 'Amiri', serif; }
         
-        .fade-in { animation: fadeIn 2.5s ease-out; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        /* Smooth Entrance */
+        .fade-in { animation: fadeIn 2s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         
+        /* Background Animation */
         @keyframes kenburns { 
             from { transform: scale(1); } 
-            to { transform: scale(1.15); } 
+            to { transform: scale(1.1); } 
         }
-        .hero-zoom { animation: kenburns 20s ease-in-out infinite alternate; }
+        .hero-zoom { animation: kenburns 15s ease-in-out infinite alternate; }
         
-        .gold-accent { color: #c5a059; }
-        .gold-bg { background: linear-gradient(145deg, #c5a059, #e2c285); }
-        .glass { background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(8px); }
+        .gold-accent { color: #b08d44; }
+        .gold-bg { background: linear-gradient(145deg, #b08d44, #d4b475); }
+        .glass { background: rgba(255, 255, 255, 0.96); backdrop-filter: blur(10px); }
         
-        .divider { width: 60px; height: 1px; background: #c5a059; margin: 2rem auto; opacity: 0.5; }
+        .divider { width: 60px; height: 1px; background: #b08d44; margin: 1.5rem auto; opacity: 0.4; }
+        .text-shadow { text-shadow: 0 2px 8px rgba(0,0,0,0.4); }
+
+        /* Custom Scrollbar for a cleaner look */
+        .scroll-container::-webkit-scrollbar { width: 0px; }
     </style>
 </head>
 <body class="antialiased">
 
     <div class="scroll-container">
 
-        <section class="relative overflow-hidden">
+        <section class="relative overflow-hidden text-center">
             <div class="absolute inset-0">
                 <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2069&auto=format&fit=crop')] bg-cover bg-center hero-zoom"></div>
             </div>
-            <div class="absolute inset-0 bg-black/35"></div>
+            <div class="absolute inset-0 bg-black/40"></div>
             
-            <div class="relative z-10 text-center text-white p-6 fade-in">
-                <h2 class="serif-ar text-3xl mb-4 tracking-[0.2em] font-light">آية & باسل</h2>
-                <div class="w-12 h-[1px] bg-white/40 mx-auto my-6"></div>
-                <h1 class="serif-en text-6xl md:text-9xl font-light italic mb-8">Aya & Bassel</h1>
-                <p class="text-sm tracking-[0.5em] font-extralight uppercase">30 . 06 . 2024</p>
+            <div class="relative z-10 w-full px-6 fade-in">
+                <h2 class="serif-ar text-3xl md:text-4xl mb-4 tracking-[0.1em] text-white text-shadow">آية & باسل</h2>
+                <div class="w-12 h-[1px] bg-white/60 mx-auto my-6"></div>
+                <h1 class="serif-en text-5xl sm:text-7xl md:text-9xl font-light italic mb-8 text-white text-shadow leading-tight">Aya & Bassel</h1>
+                <p class="text-xs md:text-sm tracking-[0.5em] font-medium uppercase text-white/90 text-shadow">30 . 06 . 2024</p>
                 
-                <div class="mt-24 animate-bounce opacity-50">
-                    <p class="text-[9px] tracking-[0.3em] mb-2 uppercase">Scroll</p>
+                <div class="mt-16 md:mt-24 animate-bounce opacity-80">
                     <div class="w-[1px] h-10 bg-white mx-auto"></div>
                 </div>
             </div>
         </section>
 
-        <section class="bg-white px-6">
-            <div class="max-w-4xl mx-auto text-center">
-                <div class="mb-12">
-                    <span class="gold-accent text-3xl block mb-6">✧</span>
-                    <p class="serif-ar text-4xl leading-relaxed mb-4" dir="rtl">نتشرف بدعوتكم لمشاركتنا حفل زفافنا</p>
-                    <p class="serif-en text-xl italic text-stone-400 font-light">With love and joy, we request the honor of your presence.</p>
+        <section class="bg-white">
+            <div class="max-w-4xl w-full mx-auto text-center px-4">
+                <div class="mb-10 md:mb-16">
+                    <span class="gold-accent text-3xl block mb-4">✧</span>
+                    <p class="serif-ar text-3xl md:text-5xl leading-relaxed mb-4 text-stone-800" dir="rtl">نتشرف بدعوتكم لمشاركتنا حفل زفافنا</p>
+                    <p class="serif-en text-lg md:text-2xl italic text-stone-500">With love and joy, we request the honor of your presence.</p>
                 </div>
 
-                <div class="space-y-12">
-                    <div class="space-y-4">
-                        <h4 class="gold-accent uppercase tracking-[0.3em] text-[10px] font-bold">The Venue | المكان</h4>
-                        <p class="serif-ar text-2xl" dir="rtl">فندق جراند الخيال</p>
-                        <p class="serif-en text-2xl italic">Grand Hôtel Al Khayal</p>
-                        <a href="https://maps.app.goo.gl/YourMapLink" target="_blank" class="inline-block text-[9px] tracking-[0.2em] border-b border-stone-200 pb-1 mt-2 uppercase">Location Map</a>
+                <div class="flex flex-col md:flex-row justify-center gap-10 md:gap-20 items-center md:items-start">
+                    <div class="space-y-3">
+                        <h4 class="gold-accent uppercase tracking-[0.2em] text-[10px] font-bold">The Venue | المكان</h4>
+                        <p class="serif-ar text-2xl font-bold text-stone-800">فندق جراند الخيال</p>
+                        <p class="serif-en text-2xl italic text-stone-700">Grand Hôtel Al Khayal</p>
+                        <a href="https://maps.google.com" target="_blank" class="inline-block text-[10px] font-bold tracking-[0.1em] border-b border-stone-200 pb-1 mt-2 uppercase text-stone-500 hover:text-[#b08d44]">View Location Map</a>
                     </div>
                     
-                    <div class="border-t border-stone-100 pt-12 space-y-4">
-                        <h4 class="gold-accent uppercase tracking-[0.3em] text-[10px] font-bold">The Time | الوقت</h4>
-                        <p class="serif-ar text-2xl" dir="rtl">٣٠ حزيران ٢٠٢٤</p>
-                        <p class="serif-en text-2xl italic">June 30, 2024</p>
-                        <p class="text-stone-400 text-xs">8:30 PM | الثامنة والنصف مساءً</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+                    <div class="hidden md:block w-[1px] h-32 bg-stone-100 self-center"></div>
+                    <div class="md:hidden w-16 h-[1px] bg-stone-100"></div>
 
-        <section class="bg-stone-50 px-6">
-            <div class="max-w-3xl mx-auto text-center glass border border-white p-12 rounded-[2.5rem] shadow-sm">
-                <div class="space-y-12">
                     <div class="space-y-3">
-                        <h5 class="gold-accent text-[10px] tracking-[0.3em] font-bold uppercase">Dress Code</h5>
-                        <p class="serif-ar text-2xl">ملابس رسمية</p>
-                        <p class="serif-en text-lg italic text-stone-500">Formal Attire</p>
-                    </div>
-                    <div class="space-y-3 border-t border-stone-100 pt-12">
-                        <h5 class="gold-accent text-[10px] tracking-[0.3em] font-bold uppercase">Guest Note</h5>
-                        <p class="serif-ar text-xl">نعتذر عن استقبال الأطفال</p>
-                        <p class="serif-en text-lg italic text-stone-500">Adults only please</p>
+                        <h4 class="gold-accent uppercase tracking-[0.2em] text-[10px] font-bold">The Time | الوقت</h4>
+                        <p class="serif-ar text-2xl font-bold text-stone-800">٣٠ حزيران ٢٠٢٤</p>
+                        <p class="serif-en text-2xl italic text-stone-700">June 30, 2024</p>
+                        <p class="text-stone-600 text-xs font-medium">8:30 PM | الثامنة والنصف مساءً</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="bg-white px-6 text-center">
-            <div class="max-w-2xl mx-auto">
-                <div class="divider"></div>
-                <h2 class="serif-ar text-4xl mb-4">بانتظاركم لنحتفل معاً</h2>
-                <p class="serif-en text-2xl italic text-stone-400 font-light mb-12">We can't wait to see you.</p>
+        <section class="bg-stone-50">
+            <div class="max-w-2xl w-full mx-auto text-center glass border border-stone-100 p-8 md:p-16 rounded-[2rem] md:rounded-[3rem] shadow-sm">
+                <div class="flex flex-col gap-10 md:gap-16">
+                    <div class="space-y-2">
+                        <h5 class="gold-accent text-[10px] tracking-[0.3em] font-bold uppercase">Dress Code</h5>
+                        <p class="serif-ar text-2xl font-bold text-stone-800">ملابس رسمية</p>
+                        <p class="serif-en text-lg italic text-stone-600">Formal Attire</p>
+                    </div>
+                    <div class="w-12 h-[1px] bg-stone-200 mx-auto"></div>
+                    <div class="space-y-2">
+                        <h5 class="gold-accent text-[10px] tracking-[0.3em] font-bold uppercase">Guest Note</h5>
+                        <p class="serif-ar text-xl font-bold text-stone-800">نعتذر عن استقبال الأطفال</p>
+                        <p class="serif-en text-lg italic text-stone-600">Adults only please</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                <a href="#" class="inline-block gold-bg text-white px-12 py-5 rounded-full text-[10px] tracking-[0.4em] font-bold shadow-xl hover:scale-[1.05] transition-all uppercase">
+        <section class="bg-white">
+            <div class="max-w-2xl w-full mx-auto text-center px-6">
+                <div class="divider"></div>
+                <h2 class="serif-ar text-4xl md:text-5xl mb-4 text-stone-800 leading-snug">بانتظاركم لنحتفل معاً</h2>
+                <p class="serif-en text-2xl md:text-3xl italic text-stone-400 font-light mb-12">We can't wait to see you.</p>
+
+                <a href="#" class="inline-block gold-bg text-white px-10 md:px-16 py-5 rounded-full text-[10px] tracking-[0.3em] font-bold shadow-xl hover:scale-105 active:scale-95 transition-all uppercase">
                     Add to Calendar / حفظ الموعد
                 </a>
 
-                <div class="mt-20 text-stone-300 text-[10px] tracking-[0.3em] uppercase">
-                    <p>Inquiries: <span class="text-stone-600 font-bold">76 169 032</span></p>
+                <div class="mt-16 md:mt-24 text-stone-400 text-[10px] tracking-[0.2em] uppercase font-medium">
+                    <p class="mb-1">For Inquiries | للإستفسار</p>
+                    <p class="text-stone-700 font-bold text-sm tracking-widest">76 169 032</p>
                 </div>
             </div>
             
-            <footer class="absolute bottom-8 left-0 right-0 text-center">
-                <p class="text-[9px] tracking-[0.5em] text-stone-300 uppercase font-light italic">Aya & Bassel — 2024</p>
+            <footer class="absolute bottom-6 left-0 right-0 text-center">
+                <p class="text-[9px] tracking-[0.4em] text-stone-300 uppercase font-medium italic">Aya & Bassel — 2024</p>
             </footer>
         </section>
 
